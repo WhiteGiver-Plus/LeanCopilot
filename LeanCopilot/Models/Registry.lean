@@ -47,7 +47,7 @@ instance {α β : Type} [BEq α] [Hashable α] [Repr α] [Repr β] : Repr (HashM
 
 structure ModelRegistry where
   generators : HashMap String Generator :=
-    HashMap.ofList [(Builtin.generator.name, .native Builtin.generator)]
+    HashMap.ofList [(Builtin.generator.name, .native Builtin.generator),(Builtin.mygenerator.name, .external Builtin.mygenerator)]
   encoders : HashMap String Encoder :=
     HashMap.ofList [(Builtin.encoder.name, .native Builtin.encoder)]
 

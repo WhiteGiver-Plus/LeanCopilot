@@ -1,6 +1,6 @@
 import ModelCheckpointManager
 import LeanCopilot.Models.ByT5
-
+import LeanCopilot.Models.External
 set_option autoImplicit false
 
 namespace LeanCopilot.Builtin
@@ -12,6 +12,13 @@ def generator : NativeGenerator := {
   params := {
     numReturnSequences := 32
   }
+}
+
+def mygenerator: ExternalGenerator := {
+  name := "customgen"
+  -- host := "console.siflow.cn/siflow/draco/ai4math/zhqin/tacticgen-v1"
+  host := "localhost"
+  port := 23337
 }
 
 
